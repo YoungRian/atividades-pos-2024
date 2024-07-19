@@ -1,62 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE quiz SYSTEM ("quiz.dtd")>
+<!DOCTYPE quiz SYSTEM "quiz.dtd">
 
-<quiz>
-    <disciplina> Matematica </disciplina>
-    <professor>  
-        <nome> Rian </nome>
-        <matrícula> 20211181110099 </matrícula>
-    </professor>
-    <turma> Informatica p/ Internet </turma>
-    <data> 20/02/2001 </data>
-    <questões>
-        <enunciado> Quanto é 78 + 7847 </enunciado>
-        <pontuação> 10 </pontuação>
-        <alternativas>
-            <alternativa correta="nao"> 8021 </alternativa>
-            <alternativa correta="nao"> 7965 </alternativa>
-            <alternativa correta="sim"> 7921 </alternativa>
-            <alternativa correta="nao"> 7911 </alternativa>
-        </alternativas>
-    </questões>
-    <questões>
-        <enunciado> Quanto é 43 + 2302 </enunciado>
-        <pontuação> 10 </pontuação>
-        <alternativas>
-            <alternativa correta="nao"> 2355 </alternativa>
-            <alternativa correta="sim"> 2345 </alternativa>
-            <alternativa correta="nao"> 2366 </alternativa>
-            <alternativa correta="nao"> 2398 </alternativa>
-        </alternativas>
-    </questões>
-    <questões>
-        <enunciado> Quanto é 22 + 2222 </enunciado>
-        <pontuação> 10 </pontuação>
-        <alternativas>
-            <alternativa correta="nao"> 2454 </alternativa>
-            <alternativa correta="nao"> 2260 </alternativa>
-            <alternativa correta="nao"> 2262 </alternativa>
-            <alternativa correta="sim"> 2444 </alternativa>
-        </alternativas>
-    </questões>
-    <questões>
-        <enunciado> Quanto é 40 + 5672 </enunciado>
-        <pontuação> 10 </pontuação>
-        <alternativas>
-            <alternativa correta="sim"> 5712 </alternativa>
-            <alternativa correta="nao"> 5820 </alternativa>
-            <alternativa correta="nao"> 5789 </alternativa>
-            <alternativa correta="nao"> 5801 </alternativa>
-        </alternativas>
-    </questões>
-    <questões>
-        <enunciado> Quanto é 04 + 25 + 2023 </enunciado>
-        <pontuação> 10 </pontuação>
-        <alternativas>
-            <alternativa correta="nao"> 2060 </alternativa>
-            <alternativa correta="sim"> 2052 </alternativa>
-            <alternativa correta="nao"> 2055 </alternativa>
-            <alternativa correta="nao"> 2062 </alternativa>
-        </alternativas>
-    </questões>
+<quiz versao="1.0.0">
+        <disciplina> Matematica </disciplina>
+        <professor>  
+                <nome> Rian </nome>
+                <matrícula> 20211181110099 </matrícula>
+        </professor>
+        <turma> Informatica p/ Internet </turma>
+        <data> 20/02/2001 </data>
+        <questões>
+            <questão>
+                <enunciado> Quanto é 78 + 7847 </enunciado>
+                <pontuação> 10 </pontuação>
+                <alternativas>
+                        <alternativa correta="nao"> 8021 </alternativa>
+                        <alternativa correta="nao"> 7965 </alternativa>
+                        <alternativa correta="sim"> 7921 </alternativa>
+                        <alternativa correta="nao"> 7911 </alternativa>
+                </alternativas>
+            </questão>
+            <questão>
+                <enunciado> Quanto é 43 + 2302 </enunciado>
+                <pontuação> 10 </pontuação>
+                <alternativas>
+                        <alternativa correta="nao"> 2355 </alternativa>
+                        <alternativa correta="sim"> 2345 </alternativa>
+                        <alternativa correta="nao"> 2366 </alternativa>
+                        <alternativa correta="nao"> 2398 </alternativa>
+                </alternativas>
+            </questão>
+            <questão>
+                <enunciado> Quanto é 22 + 2222 </enunciado>
+                <pontuação> 10 </pontuação>
+                <alternativas>
+                        <alternativa correta="nao"> 2454 </alternativa>
+                        <alternativa correta="nao"> 2260 </alternativa>
+                        <alternativa correta="nao"> 2262 </alternativa>
+                        <alternativa correta="sim"> 2444 </alternativa>
+                </alternativas>
+            </questão>
+            <questão>
+                <enunciado> Quanto é 40 + 5672 </enunciado>
+                <pontuação> 10 </pontuação>
+                <alternativas>
+                        <alternativa correta="sim"> 5712 </alternativa>
+                        <alternativa correta="nao"> 5820 </alternativa>
+                        <alternativa correta="nao"> 5789 </alternativa>
+                        <alternativa correta="nao"> 5801 </alternativa>
+                </alternativas>
+            </questão>
+            <questão>
+                <enunciado> Quanto é 04 + 25 + 2023 </enunciado>
+                <pontuação> 10 </pontuação>
+                <alternativas>
+                        <alternativa correta="nao"> 2060 </alternativa>
+                        <alternativa correta="sim"> 2052 </alternativa>
+                        <alternativa correta="nao"> 2055 </alternativa>
+                        <alternativa correta="nao"> 2062 </alternativa>
+                </alternativas>
+            </questão>
+        </questões>
 </quiz>
