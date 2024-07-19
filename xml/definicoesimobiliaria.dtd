@@ -6,5 +6,19 @@
 <!ELEMENT endereco (rua, bairro, cidade, numero?)>
 <!ELEMENT caracteristicas (tamanho, numQuartos, numBanheiros)>
 
+<!ELEMENT nome (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT telefone (#PCDATA)>
+<!ELEMENT rua (#PCDATA)>
+
+<!ELEMENT rua (#PCDATA)>
+<!ELEMENT bairro (#PCDATA)>
+<!ELEMENT cidade (#PCDATA)>
+<!ELEMENT numero (#PCDATA)>
+
+<!ELEMENT tamanho (#PCDATA)>
+<!ELEMENT numQuartos (#PCDATA)>
+<!ELEMENT numBanheiros (#PCDATA)>
+
 <!ELEMENT descricao (#PCDATA)>
 <!ELEMENT valor (#PCDATA)>
