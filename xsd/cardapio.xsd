@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://www.exemplo.com/cardapio"
+    targetNamespace="http://www.exemplo.com/cardapio"
+    elementFormDefault="qualified">
+
+    <xs:element name="Cardapio">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="prato" max0ccurs="unbounded">
+                    <xs:complexType>
+                    <xs:attribute name="id" type="xs:integer" use="required"/>
+                        <xs:sequence>
+                            <xs:element name="Nome" type="xs:string"/>
+                            <xs:element name="Descricao" type="xs:string"/>
+                            <xs:element name="Ingredientes">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Ingrediente" type="xs:string"  minOccurs="1" maxOccurs="unbounded"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            <xs:element name="Preco" type="xs:decimal"/>
+                            <xs:element name="Calorias" type="xs:integer"/>
+                            <xs:element name="TempoPreparo" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element> 
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
