@@ -8,36 +8,38 @@
     <xs:element name="Imobiliaria">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="imovel" max0ccurs="unbounded">
+                <xs:element name="imovel">
                     <xs:complexType>
-                    <xs:attribute name="id" type="xs:integer" use="required"/>
                         <xs:sequence>
                             <xs:element name="Descricao" type="xs:string"/>
-                            <xs:element name="proprietario" type="xs:string"/>
+                            <xs:element name="Proprietario">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="Nome" type="xs:string">
-                                        <xs:element name="Email" type="xs:string">
+                                        <xs:element name="Nome" type="xs:string"/>
+                                        <xs:element name="Email" type="xs:string"/>
                                         <xs:element name="Telefone" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
                                     </xs:sequence>
                                 </xs:complexType>
+                            </xs:element>
                             <xs:element name="Endereco">
                                 <xs:complexType>
                                         <xs:sequence>
-                                            <xs:element name="Rua" type="xs:string">
-                                            <xs:element name="Bairro" type="xs:string">
-                                            <xs:element name="Cidade " type="xs:string"/>
-                                            <xs:element name="Numero " type="xs:integer" minOccurs="0" maxOccurs="unbounded"/>
+                                            <xs:element name="Rua" type="xs:string"/>
+                                            <xs:element name="Bairro" type="xs:string"/>
+                                            <xs:element name="Cidade" type="xs:string"/>
+                                            <xs:element name="Numero" type="xs:integer" minOccurs="0"/>
                                         </xs:sequence>
                                     </xs:complexType>
-                            <xs:element name="Caracteristicas " type="xs:decimal"/>
-                            <xs:complexType>
-                                        <xs:sequence>
-                                            <xs:element name="Tamanho" type="xs:decimal" >
-                                            <xs:element name="numQuartos " type="xs:integer">
-                                            <xs:element name="numBanheiros " type="xs:integer"/>
-                                        </xs:sequence>
-                                    </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Caracteristicas">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Tamanho" type="xs:decimal"/>
+                                        <xs:element name="numQuartos" type="xs:integer"/>
+                                        <xs:element name="numBanheiros" type="xs:integer"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
                             <xs:element name="Valor" type="xs:integer"/>
                         </xs:sequence>
                     </xs:complexType>
