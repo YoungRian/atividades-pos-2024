@@ -1,0 +1,104 @@
+{
+    "imobiliaria": {
+      "imoveis": [
+        {
+          "descricao": "Apartamento grande",
+          "proprietario": {
+            "nome": "Joedson",
+            "emails": ["joedson.rian@gmail.com"],
+            "telefones": ["84 999650665", "84 123456789"]
+          },
+          "endereco": {
+            "rua": "Rua YK",
+            "bairro": "Manhattan",
+            "cidade": "Nova York",
+            "numero": 507
+          },
+          "caracteristicas": {
+            "tamanho": 250.0,
+            "numQuartos": 20,
+            "numBanheiros": 40
+          },
+          "valor": 125000000.00
+        },
+        {
+          "descricao": "Casa de primeiro andar",
+          "proprietario": {
+            "nome": "Simão",
+            "emails": ["simao.pedro@gmail.com"],
+            "telefones": ["84 40028922"]
+          },
+          "endereco": {
+            "rua": "Rua Vinte e Cinco de Abril",
+            "bairro": "Espirito Santo",
+            "cidade": "Carburador"
+          },
+          "caracteristicas": {
+            "tamanho": 50.0,
+            "numQuartos": 6,
+            "numBanheiros": 5
+          },
+          "valor": 80000.00
+        },
+        {
+          "descricao": "Chácara com lago",
+          "proprietario": {
+            "nome": "Luciana Rocha",
+            "emails": ["luciana.rocha@example.com"],
+            "telefones": ["31 98765-4321"]
+          },
+          "endereco": {
+            "rua": "Estrada do Lago",
+            "bairro": "Zona Rural",
+            "cidade": "Itatiba",
+            "numero": 89
+          },
+          "caracteristicas": {
+            "tamanho": 500.0,
+            "numQuartos": 4,
+            "numBanheiros": 3
+          },
+          "valor": 450000.00
+        },
+        {
+          "descricao": "Loja comercial",
+          "proprietario": {
+            "nome": "Ricardo Lima",
+            "telefones": ["21 3344-5566"]
+          },
+          "endereco": {
+            "rua": "Avenida Brasil",
+            "bairro": "Centro",
+            "cidade": "Rio de Janeiro",
+            "numero": 1234
+          },
+          "caracteristicas": {
+            "tamanho": 150.0,
+            "numQuartos": 0,
+            "numBanheiros": 2
+          },
+          "valor": 120000.00
+        },
+        {
+          "descricao": "Kitnet compacta",
+          "proprietario": {
+            "nome": "Aline Silva",
+            "emails": ["aline.silva@example.com"],
+            "telefones": ["11 99876-5432"]
+          },
+          "endereco": {
+            "rua": "Rua dos Prados",
+            "bairro": "Vila Mariana",
+            "cidade": "São Paulo",
+            "numero": 343
+          },
+          "caracteristicas": {
+            "tamanho": 30.0,
+            "numQuartos": 1,
+            "numBanheiros": 1
+          },
+          "valor": 95000.00
+        }
+      ]
+    }
+  }
