@@ -1,0 +1,58 @@
+{
+    "cardapio":
+    {
+        "pratos":
+        [
+            {"id":"P1",
+            "nome":"Feijoada",
+            "descricao":"A feijoada é um prato tradicional brasileiro feito com feijão preto e uma variedade de carnes",
+            "ingredientes": [
+                "Feijão preto", "Carne de porco", "Linguiça", "Bacon", "Cebola e alho", "Folhas de louro", "Sal e pimenta"
+              ],
+            "preco":20.00,
+            "calorias":400,
+            "tempo":"1 hora"
+            },
+            {"id":"P2",
+            "nome":"Moqueca de Peixe",
+            "descricao":"Moqueca de peixe é um ensopado de peixe com leite de coco, azeite de dendê, tomates e pimentões.",
+            "ingredientes": [
+                "Peixe", "Leite de coco", "Azeite de dendê", "Tomates", "Pimentões", "Cebola", "Alho", "Coentro"
+              ],
+            "preco":30.00,
+            "calorias":500,
+            "tempo":"1 hora e 30 minutos"
+            },
+            {"id":"P3",
+            "nome":"Frango à Passarinho",
+            "descricao":"Frango frito em pedaços pequenos, temperado com alho e limão, servido crocante e com molho especial.",
+            "ingredientes": [
+                "Frango", "Alho", "Limão", "Farinha de trigo", "Óleo para fritar", "Sal e pimenta"
+              ],
+            "preco":25.00,
+            "calorias":600,
+            "tempo":"45 minutos"
+            },
+            {"id":"P4",
+            "nome":"Escondidinho de Carne Seca",
+            "descricao":"Prato com carne seca desfiada coberta com purê de mandioca, gratinado até ficar dourado.",
+            "ingredientes": [
+                "Carne seca", "Mandioca", "Cebola", "Alho", "Queijo ralado", "Creme de leite", "Sal e pimenta"
+              ],
+            "preco":28.00,
+            "calorias":550,
+            "tempo":"1 hora e 15 minutos"
+            },
+            {"id":"P5",
+            "nome":"Pastel de Carne",
+            "descricao":"Pastel frito recheado com carne moída temperada e cebola, crocante e servido com molho de pimenta.",
+            "ingredientes": [
+                "Massa de pastel", "Carne moída", "Cebola", "Alho", "Sal", "Pimenta", "Óleo para fritar"
+              ],
+            "preco":12.00,
+            "calorias":300,
+            "tempo":"30 minutos"
+            }
+        ]
+    }
+}
