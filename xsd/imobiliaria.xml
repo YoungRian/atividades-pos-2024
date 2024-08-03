@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<imobiliaria xmlns="http://www.exemplo.com/imobiliaria"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.exemplo.com/imobiliaria imobiliaria.xsd">
+
+    <imovel>
+        <descricao>Apartamento grande</descricao>
+        <proprietario>
+            <nome>Joedson</nome>
+            <email>joedson.rian@gmail.com</email>
+            <telefone>84 999650665</telefone>
+            <telefone>84 123456789</telefone>
+        </proprietario>
+        <endereco>
+            <rua>Rua YK</rua>
+            <bairro>Manhattan</bairro>
+            <cidade>Nova York</cidade>
+            <numero>507</numero>
+        </endereco>
+        <caracteristicas>
+            <tamanho>250.0</tamanho>
+            <numQuartos>20</numQuartos>
+            <numBanheiros>40</numBanheiros>
+        </caracteristicas>
+        <valor>125.000.000</valor>
+    </imovel>
+
+    <imovel>
+        <descricao>Casa de primeiro andar</descricao>
+        <proprietario>
+            <nome>Simão</nome>
+            <email>simao.pedro@gmail.com</email>
+            <telefone>84 40028922</telefone>
+        </proprietario>
+        <endereco>
+            <rua>Rua Vinte e Cinco de Abril</rua>
+            <bairro>Espirito Santo</bairro>
+            <cidade>Carburador</cidade>
+        </endereco>
+        <caracteristicas>
+            <tamanho>50.0</tamanho>
+            <numQuartos>6</numQuartos>
+            <numBanheiros>5</numBanheiros>
+        </caracteristicas>
+        <valor>80.000</valor>
+    </imovel>
+
+    <imovel>
+        <descricao>Chácara com lago</descricao>
+        <proprietario>
+            <nome>Luciana Rocha</nome>
+            <email>luciana.rocha@example.com</email>
+            <telefone>31 98765-4321</telefone>
+        </proprietario>
+        <endereco>
+            <rua>Estrada do Lago</rua>
+            <bairro>Zona Rural</bairro>
+            <cidade>Itatiba</cidade>
+            <numero>89</numero>
+        </endereco>
+        <caracteristicas>
+            <tamanho>500.0</tamanho>
+            <numQuartos>4</numQuartos>
+            <numBanheiros>3</numBanheiros>
+        </caracteristicas>
+        <valor>450000.00</valor>
+    </imovel>
+
+    <imovel>
+        <descricao>Loja comercial</descricao>
+        <proprietario>
+            <nome>Ricardo Lima</nome>
+            <telefone>21 3344-5566</telefone>
+        </proprietario>
+        <endereco>
+            <rua>Avenida Brasil</rua>
+            <bairro>Centro</bairro>
+            <cidade>Rio de Janeiro</cidade>
+            <numero>1234</numero>
+        </endereco>
+        <caracteristicas>
+            <tamanho>150.0</tamanho>
+            <numQuartos>0</numQuartos>
+            <numBanheiros>2</numBanheiros>
+        </caracteristicas>
+        <valor>120000.00</valor>
+    </imovel>
+
+    <imovel>
+        <descricao>Kitnet compacta</descricao>
+        <proprietario>
+            <nome>Aline Silva</nome>
+            <email>aline.silva@example.com</email>
+            <telefone>11 99876-5432</telefone>
+        </proprietario>
+        <endereco>
+            <rua>Rua dos Prados</rua>
+            <bairro>Vila Mariana</bairro>
+            <cidade>São Paulo</cidade>
+            <numero>343</numero>
+        </endereco>
+        <caracteristicas>
+            <tamanho>30.0</tamanho>
+            <numQuartos>1</numQuartos>
+            <numBanheiros>1</numBanheiros>
+        </caracteristicas>
+        <valor>95000.00</valor>
+    </imovel>
+
+
+</imobiliaria>
