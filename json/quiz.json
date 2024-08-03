@@ -1,0 +1,63 @@
+{
+    "quiz": {
+      "disciplina": "Matematica",
+      "professor": {
+        "nome": "Rian",
+        "matricula": "20211181110099"
+      },
+      "turma": "Informatica p/ Internet",
+      "data": "20/02/2001",
+      "questoes": [
+        {
+          "enunciado": "Quanto é 78 + 7847",
+          "pontuacao": 10,
+          "alternativas": [
+            {"texto": "8021", "correta": false},
+            {"texto": "7965", "correta": false},
+            {"texto": "7921", "correta": true},
+            {"texto": "7911", "correta": false}
+          ]
+        },
+        {
+          "enunciado": "Quanto é 43 + 2302",
+          "pontuacao": 10,
+          "alternativas": [
+            {"texto": "2355", "correta": false},
+            {"texto": "2345", "correta": true},
+            {"texto": "2366", "correta": false},
+            {"texto": "2398", "correta": false}
+          ]
+        },
+        {
+          "enunciado": "Quanto é 22 + 2222",
+          "pontuacao": 10,
+          "alternativas": [
+            {"texto": "2454", "correta": false},
+            {"texto": "2260", "correta": false},
+            {"texto": "2262", "correta": false},
+            {"texto": "2444", "correta": true}
+          ]
+        },
+        {
+          "enunciado": "Quanto é 40 + 5672",
+          "pontuacao": 10,
+          "alternativas": [
+            {"texto": "5712", "correta": true},
+            {"texto": "5820", "correta": false},
+            {"texto": "5789", "correta": false},
+            {"texto": "5801", "correta": false}
+          ]
+        },
+        {
+          "enunciado": "Quanto é 04 + 25 + 2023",
+          "pontuacao": 10,
+          "alternativas": [
+            {"texto": "2060", "correta": false},
+            {"texto": "2052", "correta": true},
+            {"texto": "2055", "correta": false},
+            {"texto": "2062", "correta": false}
+          ]
+        }
+      ]
+    }
+  }
