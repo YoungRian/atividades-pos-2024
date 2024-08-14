@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <imobiliaria>
-    <imovel>
+    <imovel id="A1">
         <descricao>Apartamento grande</descricao>
         <proprietario>
             <nome>Joedson</nome>
@@ -23,7 +23,7 @@
         <valor>125,000,000</valor>
     </imovel>
 
-    <imovel>
+    <imovel id="A2">
         <descricao>Casa de primeiro andar</descricao>
         <proprietario>
             <nome>Simão</nome>
