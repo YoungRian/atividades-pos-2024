@@ -30,14 +30,7 @@ for List_Prato in pratos:
     elemento_list_tempo = List_Prato.getElementsByTagName('tempo')[0]
     list_tempo = elemento_list_tempo.firstChild.nodeValue
 
-    print("Prato ID: ", List_Prato_ID)
-    print("Nome:", list_nome)
-    print("Descrição:", list_descricao)
-    print("Igredinentes: ", ingrediente_texto)
-    print("Preço: ", list_preco)
-    print("Calorias: ", list_calorias)
-    print("Tempo: ", list_tempo)
-    print("-----------\n")
+    print(f"Prato ID: {List_Prato_ID} - {list_nome}")
     
 # Para o usuario digitar o ID do prato
 pratoID = input("Digite o ID do prato para mais informações: ")
@@ -57,8 +50,8 @@ for prato in pratos:
         elemento_descricao = prato.getElementsByTagName('descricao')[0]
         descricao = elemento_descricao.firstChild.nodeValue
 
-        elemento_ingredientes = prato.getElementsByTagName('ingredientes')[0]
-        ingrediente_texto = elemento_ingredientes.getElementsByTagName('ingrediente')[0].firstChild.nodeValue
+        elemento_ingredientes = prato.getElementsByTagName('igredientes')[0]
+        ingrediente_texto = elemento_ingredientes.getElementsByTagName('igrediente')[0].firstChild.nodeValue
         
         elemento_preco = prato.getElementsByTagName('preco')[0]
         preco = elemento_preco.firstChild.nodeValue
@@ -71,7 +64,8 @@ for prato in pratos:
 
         print("Prato ID: ", idprato)
         print("Nome:", nome)
-        print("Descrição:", ingrediente_texto)
+        print("Descrição:", descricao)
+        print("Igredinentes: ", ingrediente_texto, ".")
         print("Preço: ", preco)
         print("Calorias: ", calorias)
         print("Tempo: ", tempo)
