@@ -73,7 +73,7 @@ for prato in pratos:
 
         prato_encontrado = True
 
-        break
+        
 
 # Se a flag "prato_encontrado" ainda for igual a falso
 if not prato_encontrado: # ou if prato_encontrado == False
