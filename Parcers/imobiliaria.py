@@ -90,3 +90,4 @@ for imovel in imoveis:
     print("numero: ", numero)
     print("Valor: ", valor)
     print("---\n")
+    
