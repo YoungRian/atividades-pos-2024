@@ -1,0 +1,50 @@
+[
+    {
+        "id": "A1",
+        "descricao": "Apartamento grande",
+        "proprietario": {
+            "nome": "Joedson",
+            "email": "joedson.rian@gmail.com",
+            "telefones": [
+                "84 999650665",
+                "84 123456789"
+            ]
+        },
+        "endereco": {
+            "rua": "Rua YK",
+            "bairro": "Manhattan",
+            "cidade": "Nova York",
+            "numero": "507"
+        },
+        "caracteristicas": {
+            "tamanho": "250m²",
+            "numero de quartos": "20",
+            "numero de banheiros": "40"
+        },
+        "valor": "125,000,000"
+    },
+    {
+        "id": "A2",
+        "descricao": "Casa de primeiro andar",
+        "proprietario": {
+            "nome": "Simão",
+            "email": "simao.pedro@gmail.com",
+            "telefones": [
+                "84 40028922",
+                "N/A"
+            ]
+        },
+        "endereco": {
+            "rua": "Rua Vinte e Cinco de Abril",
+            "bairro": "Espirito Santo",
+            "cidade": "Carburador",
+            "numero": "N/A"
+        },
+        "caracteristicas": {
+            "tamanho": "50m²",
+            "numero de quartos": "6",
+            "numero de banheiros": "5"
+        },
+        "valor": "80,000"
+    }
+]

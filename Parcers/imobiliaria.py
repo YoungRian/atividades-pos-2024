@@ -1,215 +1,88 @@
 from xml.dom.minidom import parse
 import json
 
-dom = parse("Parcers/imobiliaria.xml")
-
-# Elemento raiz do XML (biblioteca)
-biblioteca = dom.documentElement
-
-# Recebe uma lista dos elementos com tag "imovel"
-imoveis = biblioteca.getElementsByTagName('imovel')
-
-# Acessa as informações de cada imovel
-for imovel in imoveis:
+def parse_imovel(imovel):
+    #Pega o id do imovel
     id = imovel.getAttribute('id')
 
-    elemento_descricao = imovel.getElementsByTagName('descricao')[0]
-    descricao = elemento_descricao.firstChild.nodeValue
+    #Pega descrição
+    elemento_descricao = imovel.getElementsByTagName('descricao')[0].firstChild.nodeValue.strip() if imovel.getElementsByTagName('descricao') else 'N/A'
 
-    #pega proprietario
+    #Pega proprietário
     elemento_proprietario = imovel.getElementsByTagName('proprietario')[0]
-
-    #Pega nome do proprietario
-    nome_elements = elemento_proprietario.getElementsByTagName('nome')
-    nome = nome_elements[0].firstChild.nodeValue if nome_elements else 'N/A'
-
-    #Pega nome do email
-    email_elements = elemento_proprietario.getElementsByTagName('email')
-    email = email_elements[0].firstChild.nodeValue if email_elements else 'N/A'
-
-    #Pega telefone do proprietario
-    telefone_elements = elemento_proprietario.getElementsByTagName('telefone')
-    telefones = [telefone.firstChild.nodeValue for telefone in telefone_elements]
-
+    #Pega nome do proprietário
+    nome = (elemento_proprietario.getElementsByTagName('nome')[0].firstChild.nodeValue.strip() 
+        if elemento_proprietario.getElementsByTagName('nome') and elemento_proprietario.getElementsByTagName('nome')[0].firstChild else 'N/A')
+    #Pega email do proprietário
+    email = (elemento_proprietario.getElementsByTagName('email')[0].firstChild.nodeValue.strip() 
+        if elemento_proprietario.getElementsByTagName('email') and elemento_proprietario.getElementsByTagName('email')[0].firstChild else 'N/A')
+    #Pega telefone do proprietário
+    telefones = [telefone.firstChild.nodeValue.strip() 
+        for telefone in elemento_proprietario.getElementsByTagName('telefone') 
+        if telefone.firstChild]
     telefone1 = telefones[0] if len(telefones) > 0 else 'N/A'
-
     telefone2 = telefones[1] if len(telefones) > 1 else 'N/A'
-
-    #\\\\\\\\\\\\\\\\\\\\\\\\\/////////////////////////
 
     #Pega endereço
     elemento_endereco = imovel.getElementsByTagName('endereco')[0]
-
-    #Pega rua de endereco
-    rua_elements = elemento_endereco.getElementsByTagName('rua')
-    rua = rua_elements[0].firstChild.nodeValue if rua_elements else 'N/A'
-
-    #Pega bairro de endereco
-    bairro_elements = elemento_endereco.getElementsByTagName('bairro')
-    bairro = bairro_elements[0].firstChild.nodeValue if bairro_elements else 'N/A'
-
-    #Pega cidade de endereco
-    cidade_elements = elemento_endereco.getElementsByTagName('cidade')
-    cidade = cidade_elements[0].firstChild.nodeValue if cidade_elements else 'N/A'
-
-    #Pega numero de endereco
-    numero_elements = elemento_endereco.getElementsByTagName('numero') if elemento_endereco else []
-    numero = numero_elements[0].firstChild.nodeValue.strip() if numero_elements and numero_elements[0].firstChild else 'N/A'
+    rua = (elemento_endereco.getElementsByTagName('rua')[0].firstChild.nodeValue.strip() 
+        if elemento_endereco.getElementsByTagName('rua') and elemento_endereco.getElementsByTagName('rua')[0].firstChild else 'N/A')
+    #Pega bairro
+    bairro = (elemento_endereco.getElementsByTagName('bairro')[0].firstChild.nodeValue.strip() 
+        if elemento_endereco.getElementsByTagName('bairro') and elemento_endereco.getElementsByTagName('bairro')[0].firstChild else 'N/A')
+    #Pega nome da Cidade
+    cidade = (elemento_endereco.getElementsByTagName('cidade')[0].firstChild.nodeValue.strip() 
+        if elemento_endereco.getElementsByTagName('cidade') and elemento_endereco.getElementsByTagName('cidade')[0].firstChild else 'N/A')
+    #Pega numero do imovel
+    numero = (elemento_endereco.getElementsByTagName('numero')[0].firstChild.nodeValue.strip() 
+        if elemento_endereco.getElementsByTagName('numero') and elemento_endereco.getElementsByTagName('numero')[0].firstChild else 'N/A')
     
-    #\\\\\\\\\\\\\\\\\\\\\\\\\/////////////////////////
-
-    #Pega Caracteristicas
+    #Pega características
     elemento_caracteristicas = imovel.getElementsByTagName('caracteristicas')[0]
+    tamanho = (elemento_caracteristicas.getElementsByTagName('tamanho')[0].firstChild.nodeValue.strip() 
+        if elemento_caracteristicas.getElementsByTagName('tamanho') and elemento_caracteristicas.getElementsByTagName('tamanho')[0].firstChild else 'N/A')
+    #Pega numero de quartos
+    numQuartos = (elemento_caracteristicas.getElementsByTagName('numQuartos')[0].firstChild.nodeValue.strip() 
+        if elemento_caracteristicas.getElementsByTagName('numQuartos') and elemento_caracteristicas.getElementsByTagName('numQuartos')[0].firstChild else 'N/A')
+    #Pega numero de banheiros
+    numBanheiros = (elemento_caracteristicas.getElementsByTagName('numBanheiros')[0].firstChild.nodeValue.strip() 
+        if elemento_caracteristicas.getElementsByTagName('numBanheiros') and elemento_caracteristicas.getElementsByTagName('numBanheiros')[0].firstChild else 'N/A')
 
-    #Pega tamahno de caracteristicas
-    tamanho_elements = elemento_caracteristicas.getElementsByTagName('tamanho')
-    tamanho = tamanho_elements[0].firstChild.nodeValue if tamanho_elements else 'N/A'
+    #Pega valor
+    elemento_valor = (imovel.getElementsByTagName('valor')[0].firstChild.nodeValue.strip() 
+        if imovel.getElementsByTagName('valor') and imovel.getElementsByTagName('valor')[0].firstChild else 'N/A')
 
-    #Pega numQuartos de caracteristicas
-    numQuartos_elements = elemento_caracteristicas.getElementsByTagName('numQuartos')
-    numQuartos = numQuartos_elements[0].firstChild.nodeValue if numQuartos_elements else 'N/A'
+    return {
+        "id": id,
+        "descricao": elemento_descricao,
+        "proprietario": {
+            "nome": nome,
+            "email": email,
+            "telefones": [telefone1, telefone2]
+        },
+        "endereco": {
+            "rua": rua,
+            "bairro": bairro,
+            "cidade": cidade,
+            "numero": numero
+        },
+        "caracteristicas": {
+            "tamanho": tamanho,
+            "numero de quartos": numQuartos,
+            "numero de banheiros": numBanheiros,
+        },
+        "valor": elemento_valor
+    }
 
-    #Pega numBanheiros de caracteristicas
-    numBanheiros_elements = elemento_caracteristicas.getElementsByTagName('numBanheiros')
-    numBanheiros = numBanheiros_elements[0].firstChild.nodeValue if numBanheiros_elements else 'N/A'
+def main():
+    dom = parse("Parcers/imobiliaria.xml")
+    biblioteca = dom.documentElement
+    imoveis = biblioteca.getElementsByTagName('imovel')
+    
+    lista_imoveis = [parse_imovel(imovel) for imovel in imoveis]
 
-    #\\\\\\\\\\\\\\\\\\\\\\\\\/////////////////////////
+    with open("json/imobiliaria2.json", "w", encoding='utf-8') as file:
+        json.dump(lista_imoveis, file, indent=4, ensure_ascii=False)
 
-    #Pega Valor
-    valor_elements = imovel.getElementsByTagName('valor')[0]
-    valor = valor_elements.firstChild.nodeValue if valor_elements else 'N/A'
-
-    print("ID:", id)
-    print("Descrição: ", descricao)
-    #print(f'proprietario : {nome}')
-    #print(f'Email: {email}')
-    #print(f'Telefone:\n {telefone1} \n {telefone2}')
-    #print(f"Endereço: ")
-    #print("rua: ", rua)
-    #print("bairro: ", bairro)
-    #print("cidade: ", cidade)
-    #print("numero: ", numero)
-    #print("Valor: ", valor)
-    #print("---\n")
-
-# Para o usuario digitar o ID do imovel
-imovelID = input("Digite o ID do imovel para mais informações: ")
-
-# Para iniciar uma flag e verificar as informações do imovel
-imovel_encontrado = False
-
-# Acessa as informações de cada imovel
-for imovel in imoveis:
-    idmovel = imovel.getAttribute('id')
-
-    if idmovel == imovelID:
-
-        id = imovel.getAttribute('id')
-
-        elemento_descricao = imovel.getElementsByTagName('descricao')[0]
-        descricao = elemento_descricao.firstChild.nodeValue
-
-        #pega proprietario
-        elemento_proprietario = imovel.getElementsByTagName('proprietario')[0]
-
-        #Pega nome do proprietario
-        nome_elements = elemento_proprietario.getElementsByTagName('nome')
-        nome = nome_elements[0].firstChild.nodeValue if nome_elements else 'N/A'
-
-        #Pega nome do email
-        email_elements = elemento_proprietario.getElementsByTagName('email')
-        email = email_elements[0].firstChild.nodeValue if email_elements else 'N/A'
-
-        #Pega telefone do proprietario
-        telefone_elements = elemento_proprietario.getElementsByTagName('telefone')
-        telefones = [telefone.firstChild.nodeValue for telefone in telefone_elements]
-
-        telefone1 = telefones[0] if len(telefones) > 0 else 'N/A'
-
-        telefone2 = telefones[1] if len(telefones) > 1 else 'N/A'
-
-        #\\\\\\\\\\\\\\\\\\\\\\\\\/////////////////////////
-
-        #Pega endereço
-        elemento_endereco = imovel.getElementsByTagName('endereco')[0]
-
-        #Pega rua de endereco
-        rua_elements = elemento_endereco.getElementsByTagName('rua')
-        rua = rua_elements[0].firstChild.nodeValue if rua_elements else 'N/A'
-
-        #Pega bairro de endereco
-        bairro_elements = elemento_endereco.getElementsByTagName('bairro')
-        bairro = bairro_elements[0].firstChild.nodeValue if bairro_elements else 'N/A'
-
-        #Pega cidade de endereco
-        cidade_elements = elemento_endereco.getElementsByTagName('cidade')
-        cidade = cidade_elements[0].firstChild.nodeValue if cidade_elements else 'N/A'
-
-        #Pega numero de endereco
-        numero_elements = elemento_endereco.getElementsByTagName('numero') if elemento_endereco else []
-        numero = numero_elements[0].firstChild.nodeValue.strip() if numero_elements and numero_elements[0].firstChild else 'N/A'
-        
-        #\\\\\\\\\\\\\\\\\\\\\\\\\/////////////////////////
-
-        #Pega Caracteristicas
-        elemento_caracteristicas = imovel.getElementsByTagName('caracteristicas')[0]
-
-        #Pega tamahno de caracteristicas
-        tamanho_elements = elemento_caracteristicas.getElementsByTagName('tamanho')
-        tamanho = tamanho_elements[0].firstChild.nodeValue if tamanho_elements else 'N/A'
-
-        #Pega numQuartos de caracteristicas
-        numQuartos_elements = elemento_caracteristicas.getElementsByTagName('numQuartos')
-        numQuartos = numQuartos_elements[0].firstChild.nodeValue if numQuartos_elements else 'N/A'
-
-        #Pega numBanheiros de caracteristicas
-        numBanheiros_elements = elemento_caracteristicas.getElementsByTagName('numBanheiros')
-        numBanheiros = numBanheiros_elements[0].firstChild.nodeValue if numBanheiros_elements else 'N/A'
-
-        #\\\\\\\\\\\\\\\\\\\\\\\\\/////////////////////////
-
-        #Pega Valor
-        valor_elements = imovel.getElementsByTagName('valor')[0]
-        valor = valor_elements.firstChild.nodeValue if valor_elements else 'N/A'
-
-        print("ID:", id)
-        print("Descrição: ", descricao)
-        print(f'proprietario : {nome}')
-        print(f'Email: {email}')
-        print(f'Telefone:\n {telefone1} \n {telefone2}')
-        print(f"Endereço: ")
-        print("rua: ", rua)
-        print("bairro: ", bairro)
-        print("cidade: ", cidade)
-        print("numero: ", numero)
-        print("Valor: ", valor)
-        print("---\n")
-        
-        imovel_encontrado = True
-
-        
-
-# Se a flag "imovel_encontrado" ainda for igual a falso
-if not imovel_encontrado: # ou if imovel_encontrado == False
-    print("ID do imovel não encontrado.")
-
-dicionario_imobiliaria = {
-    "imovel": id,
-    "proprietario": {
-        "nome": nome,
-        "email": email,
-        "telefones": [telefone1, telefone2]
-    },
-    "endereço": {
-        "rua": rua,
-        "bairro": bairro,
-        "cidade": cidade,
-        "numero": numero
-    },
-    "caracteristicas": {
-        "tamanho": tamanho,
-        "numero de quartos": numQuartos,
-        "numero de banheiros": numBanheiros,
-    },
-    "valor": valor
-}
+if __name__ == "__main__":
+    main()
