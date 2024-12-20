@@ -1,4 +1,4 @@
-import { fetchData } from '/js_projeto/js/apiWrapper.js';
+import { fetchData } from './apiWrapper.js';
 
 document.getElementById('fetch-data').addEventListener('click', async () => {
     console.log('Fetch button clicked'); // Verifica se o evento de clique funciona
