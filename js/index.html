@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Viewer</title>>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        select, button {
+            margin: 5px;
+            padding: 8px;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>API Viewer</h1>
+    <label for="data-type">Escolha o tipo de dado:</label>
+    <select id="data-type">
+        <option value="users">Usuários</option>
+        <option value="todos">To-dos</option>
+    </select>
+    <button id="fetch-data">Buscar Dados</button>
+    <div class="output" id="output">Selecione um tipo de dado e clique em "Buscar Dados".</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
