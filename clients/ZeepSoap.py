@@ -1,17 +1,17 @@
 import zeep
 
 # define a URL do WSDL
-wsdl_url = "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL"
+wsdl_url = "https://www.dataaccess.com/webservicesserver/NumberConversion.wso?WSDL"
 
 # inicializa o cliente zeep
 client = zeep.Client(wsdl=wsdl_url)
 
-# define o código do país para BR
-country_code = "NO"
+# define o numero escolhido 
+numero_escolhido = "2012"
 
 # faz a chamada do serviço
-result = client.service.CapitalCity(
-	sCountryISOCode=country_code
+result = client.service.NumberToWords(
+	ubiNum = numero_escolhido
 )
 # imprime o resultado
-print(f"A capital do país {country_code} é {result}")
+print(f"{result}")
